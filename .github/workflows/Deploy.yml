@@ -4,8 +4,8 @@ name: Deploy
 on:
   push:
     branches:
-      #- main
-      - nix
+      - main
+      
 jobs:
   build:
     name: "Deploy project on live-dev server"
