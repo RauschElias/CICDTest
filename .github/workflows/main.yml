@@ -15,7 +15,11 @@ jobs:
 
       - name: List Contents of Directory
         run: ls
+        
+      - name: List Contents of Directory 1
         run: cd CICDTesting
+
+      - name: List Contents of Directory 2
         run: ls
   
 
