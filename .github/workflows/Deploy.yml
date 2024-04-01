@@ -34,7 +34,7 @@ jobs:
         run: ssh staging 'cd CICDTesting && git reset --hard && git pull origin main'
 
       - name: Deploy next-project
-        run: ssh staging 'npm --prefix ./CICDTesting/cicdtest i & npm --prefix ./CICDTesting/cicdtest run deploy'
+        run: ssh staging 'npm --prefix ./CICDTesting/cicdtest i & npm --prefix ./CICDTesting/cicdtest/ run deploy'
         
       - name: Copy all deployed files to www directory
         run: ssh staging 'sudo cp -a ./CICDTesting/cicdtest/out/ /var/www'
