@@ -17,6 +17,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16'
+          
+      - name: Navigate to Angular App Directory
+        run: cd CICDTest
       
       - name: Install dependencies
         run: npm install
