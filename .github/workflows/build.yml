@@ -19,10 +19,10 @@ jobs:
           node-version: 18
 
       - name: List Contents of Directory
-        run: ls
+        run: cd cicdtest && ls
       
       - name: Install dependencies
-        run: npm i
+        run: cd cicdtest && npm i
 
       - name: Build Angular App
-        run: npm run build
+        run: cd cicdtest && npm run build --prod
