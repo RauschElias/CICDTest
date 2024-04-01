@@ -1,4 +1,4 @@
-name: CI/CD PIPELINE
+name: CI/CD Pipeline
 
 on:
   pull_request:
@@ -10,16 +10,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      -name: Checkout
+      - name: Checkout
         uses: actions/checkout@v3
 
-      -name: Setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
-      
-      -name: Install dependencies
-        run: npm install
+          node-version: 18
 
-      -name: Build Angular App
-        run: npm run build --prod
+      - name: List Contents of Directory
+        run: cd CICDTesting && ls
+      
+      - name: Install dependencies
+        run: cd CICDTesting && npm i
+
+      - name: Build Angular App
+        run: cd CICDTesting && npm run build
