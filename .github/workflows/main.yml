@@ -22,7 +22,7 @@ jobs:
         run: cd CICDTesting && ls
       
       - name: Install dependencies
-        run: ls && npm i
+        run: cd CICDTesting && npm i
 
       - name: Build Angular App
         run: npm run build
