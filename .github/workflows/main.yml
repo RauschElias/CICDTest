@@ -16,13 +16,10 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
-          
-      - name: Navigate to Angular App Directory
-        run: cd CICDTest
+          node-version: 16
       
       - name: Install dependencies
-        run: npm install
+        run: npm i
 
       - name: Build Angular App
         run: npm run build
