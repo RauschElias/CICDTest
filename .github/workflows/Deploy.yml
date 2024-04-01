@@ -40,17 +40,11 @@ jobs:
       - name: Deploy next-project
         run: ssh staging 'npm --prefix ./CICDTesting i & npm --prefix ./CICDTesting run deploy'
         
-      - name: Create PHP API folder 
-        run: ssh staging 'mkdir ./CICDTesting/out/api'
-        
-      - name: Copy PHP files
-        run: ssh staging 'cp -a ./CICDTesting/api ./CICDTesting/out'
-        
       - name: Copy all deployed files to www directory
         run: ssh staging 'sudo cp -a ./CICDTesting/out/ /var/www'
-        
+
       - name: Delete previous deploy files
-        run: ssh staging 'sudo rm -r -d /var/www/CICDTesting'
-        
+        run: ssh staging 'sudo rm -r -d /var/www/html'
+
       - name: Rename www directory
-        run: ssh staging 'sudo mv /var/www/out/ /var/www/CICDTesting'
+        run: ssh staging 'sudo mv /var/www/out/ /var/www/html'
