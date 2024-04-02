@@ -19,7 +19,7 @@ jobs:
           node-version: 18
 
       - name: List Contents of Directory
-        run: cd cicdtest && ls
+        run: ls
       
       - name: Install dependencies
         run: cd cicdtest && npm i
